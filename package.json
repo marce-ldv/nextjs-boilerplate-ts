@@ -1,0 +1,25 @@
+{
+  "name": "nextjs-boilerplate-ts",
+  "version": "1.0.0",
+  "description": "Nextjs boilerplate with ts",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcelo Ludovino",
+  "license": "ISC",
+  "bin": {
+    "template-cli": "./index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "inquirer": "^9.1.3"
+  }
+}
