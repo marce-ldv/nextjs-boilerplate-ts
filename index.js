@@ -38,4 +38,3 @@ inquirer.prompt(QUESTIONS).then(answers => {
 
   createDirectoryContents(templatePath, projectName);
 });
-
