@@ -1,7 +1,8 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { Button } from '../components/atoms/Button';
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import { Button } from '../components/atoms/Button'
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -29,7 +30,7 @@ const Home: NextPage = () => {
         <div className={styles.grid}></div>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
