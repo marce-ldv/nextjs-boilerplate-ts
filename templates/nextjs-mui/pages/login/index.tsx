@@ -1,25 +1,25 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Button } from '@atoms/Button'
-import styles from '../styles/Home.module.scss'
+import dynamic from 'next/dynamic'
+import styles from '../../styles/Home.module.scss'
 
-const Home: NextPage = () => {
+const LoginOrganism = dynamic(
+  () => import('../../components/organisms/Login'),
+  { ssr: false }
+)
+
+const Login = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Boilerplate Next App</title>
-        <meta name="description" content="Next.js boilerplate" />
+        <title>Login</title>
+        <meta name="description" content="Login page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Boilerplate <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <Button>Click me</Button>
-      </main>
+      <section>
+        <LoginOrganism />
+      </section>
 
       <footer className={styles.footer}>
         <a
@@ -37,4 +37,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Login
