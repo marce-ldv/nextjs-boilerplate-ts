@@ -7,6 +7,9 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   name: string
   variant?: 'standard' | 'filled' | 'outlined'
+  rules?: {
+    required: boolean
+  }
 }
 
 export const Input = ({
@@ -14,6 +17,7 @@ export const Input = ({
   variant = 'standard',
   name,
   type,
+  rules = { required: true },
 }: InputProps) => {
   const { control } = useFormContext()
   const {
@@ -21,7 +25,7 @@ export const Input = ({
   } = useController({
     name,
     control,
-    rules: { required: true },
+    rules,
     defaultValue: '',
   })
 
