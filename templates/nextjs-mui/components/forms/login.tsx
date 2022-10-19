@@ -1,9 +1,10 @@
 import { FormProvider, useForm } from 'react-hook-form'
 import { Input } from '@atoms/Input'
 import { Button } from '@atoms/Button'
+import { LoginTypes } from '../../types/login'
 
 export const LoginForm = () => {
-  const methods = useForm({
+  const methods = useForm<LoginTypes>({
     defaultValues: {
       username: 'mrc@fake.com',
       password: '12345',

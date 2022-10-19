@@ -27,12 +27,10 @@ export const Input = ({
 
   return (
     <Box
-      component="form"
+      component="div"
       sx={{
         '& > :not(style)': { m: 1, width: '25ch' },
       }}
-      noValidate
-      autoComplete="off"
     >
       <TextField
         onChange={onChange} // send value to hook form
