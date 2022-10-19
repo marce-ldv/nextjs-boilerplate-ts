@@ -1,0 +1,49 @@
+{
+  "name": "nextjs-styled-components",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.38.0",
+    "styled-components": "^5.3.6",
+    "zod": "^3.19.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.2.0",
+    "@types/node": "18.11.2",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "babel-loader": "^8.2.5",
+    "eslint": "8.25.0",
+    "eslint-config-next": "12.3.1",
+    "eslint-plugin-storybook": "^0.6.6",
+    "husky": "^8.0.0",
+    "jest": "^29.2.1",
+    "jest-environment-jsdom": "^29.2.1",
+    "typescript": "4.8.4"
+  }
+}
