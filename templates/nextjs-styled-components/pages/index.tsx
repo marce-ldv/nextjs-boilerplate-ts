@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Button } from '../components/atoms/Button'
+import { Button } from '../components/atoms/Button/button'
+import { ThemedButton } from '../components/atoms/Button/themedButton'
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,8 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           NextJs + TS + Styled Components + Tests
         </h1>
+        <ThemedButton variant="primary">Themed Primary button</ThemedButton>
+        <ThemedButton variant="secondary">Themed Secondary button</ThemedButton>
         <Button
           label="this is a button"
           bgColor="red"

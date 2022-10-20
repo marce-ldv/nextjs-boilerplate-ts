@@ -1,12 +1,12 @@
-import { StyledButton } from './styledButton';
+import { StyledButton } from './styledButton'
 
 export type ButtonProps = {
-  label: string;
-  bgColor: string;
-  color: string;
-  size: 'small' | 'medium' | 'large';
-  upperCase?: boolean;
-};
+  label: string
+  bgColor: string
+  color: string
+  size: 'small' | 'medium' | 'large'
+  upperCase?: boolean
+}
 export const Button = ({
   label,
   bgColor,
@@ -25,5 +25,5 @@ export const Button = ({
     >
       {label}
     </StyledButton>
-  );
-};
+  )
+}

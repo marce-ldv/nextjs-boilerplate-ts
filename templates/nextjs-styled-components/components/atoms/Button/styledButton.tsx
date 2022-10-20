@@ -1,16 +1,16 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const sizes = {
   small: '1rem',
   medium: '1.5rem',
   large: '2rem',
-};
+}
 
 export const StyledButton = styled.button<{
-  bgColor: string;
-  color: string;
-  size: 'small' | 'medium' | 'large';
-  upperCase?: boolean;
+  bgColor: string
+  color: string
+  size: 'small' | 'medium' | 'large'
+  upperCase?: boolean
 }>`
   background-color: ${props => props.bgColor};
   color: ${props => props.color};
@@ -24,4 +24,4 @@ export const StyledButton = styled.button<{
   &:hover {
     filter: saturate(70%);
   }
-`;
+`
