@@ -1,7 +1,7 @@
 {
   "name": "nextjs-boilerplate-ts",
-  "version": "1.0.0",
-  "description": "Nextjs boilerplate with ts",
+  "version": "1.1.0",
+  "description": "Next.js boilerplate",
   "main": "index.js",
   "type": "module",
   "scripts": {
