@@ -1,33 +1,48 @@
-import { Button } from '@mui/material'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from '@mui/material'
+import { useState } from 'react'
 
-type FormOptions = {
-  SelectedOption: string
+type SelectOption = {
+  value: string | number
 }
 
-const MokedOptions = [
-  { value: 'option1' },
-  { value: 'option2' },
-  { value: 'option3' },
-]
+type SelectProps = {
+  placeholder: string
+  minWidth: number
+  options: SelectOption[]
+}
 
-export const SelectInput = () => {
-  const { register, handleSubmit } = useForm<FormOptions>()
-  const onSubmit: SubmitHandler<FormOptions> = data => console.log(data)
+export const SelectInput = ({
+  placeholder,
+  minWidth,
+  options,
+}: SelectProps) => {
+  const [option, setOption] = useState('')
 
+  const handleChange = (event: SelectChangeEvent) => {
+    setOption(event.target.value)
+  }
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label>Select option:</label>
-      <select {...register('SelectedOption')}>
-        {MokedOptions.map(singleOption => (
-          <option value={singleOption.value} key={singleOption.value}>
+    <FormControl sx={{ m: 1, minWidth: minWidth }}>
+      <InputLabel id="select-input">{placeholder}</InputLabel>
+      <Select
+        labelId="select-input"
+        id="select-input"
+        value={option}
+        label="select"
+        onChange={handleChange}
+      >
+        {options.map(singleOption => (
+          <MenuItem key={singleOption.value} value={singleOption.value}>
             {singleOption.value}
-          </option>
+          </MenuItem>
         ))}
-      </select>
-      <Button variant="outlined" size="small" type="submit">
-        Submit
-      </Button>
-    </form>
+      </Select>
+    </FormControl>
   )
 }

@@ -3,22 +3,35 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { SelectInput } from '../../components/atoms/Select'
 
 export default {
-  title: 'Atoms/SelectInput',
+  title: 'Atoms/Select',
   component: SelectInput,
   argTypes: {},
 } as ComponentMeta<typeof SelectInput>
 
-const Template: ComponentStory<typeof SelectInput> = () => <SelectInput />
+const MockedOptions = [
+  { value: 'option1' },
+  { value: 'option2' },
+  { value: 40 },
+]
 
-export const Default = Template.bind({})
-Default.args = {}
+const Template: ComponentStory<typeof SelectInput> = args => (
+  <SelectInput
+    options={MockedOptions}
+    placeholder={args.placeholder}
+    minWidth={args.minWidth}
+  />
+)
 
-export const Outlined = Template.bind({})
-Outlined.args = {
-  variant: 'outlined',
+export const Small = Template.bind({})
+Small.args = {
+  minWidth: 120,
 }
 
-export const Contained = Template.bind({})
-Contained.args = {
-  variant: 'contained',
+export const Medium = Template.bind({})
+Medium.args = {
+  minWidth: 150,
+}
+export const Large = Template.bind({})
+Large.args = {
+  minWidth: 200,
 }
