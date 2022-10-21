@@ -1,7 +1,7 @@
 import { LoginForm } from '@components/forms/login'
 import { styles } from '@organisms/Login/styles'
 
-const LoginOrganism = () => {
+export const LoginOrganism = () => {
   return (
     <section className={styles.container}>
       <LoginForm />
@@ -9,4 +9,3 @@ const LoginOrganism = () => {
   )
 }
 
-export default LoginOrganism
