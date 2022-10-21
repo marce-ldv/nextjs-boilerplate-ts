@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import LoginOrganism from '../../components/organisms/Login'
+import { LoginOrganism } from '../../components/organisms/Login'
 
 describe('Organism Login', () => {
   test('render LoginOrganism without crash', () => {
