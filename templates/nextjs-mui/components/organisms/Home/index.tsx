@@ -1,7 +1,7 @@
 import { Button } from '@atoms/Button'
 import { styles } from '@organisms/Home/styles'
 
-const HomeOrganism = () => {
+export const HomeOrganism = () => {
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
@@ -13,4 +13,3 @@ const HomeOrganism = () => {
   )
 }
 
-export default HomeOrganism
