@@ -37,9 +37,9 @@ export const SelectInput = ({
         label="select"
         onChange={handleChange}
       >
-        {options.map(singleOption => (
-          <MenuItem key={singleOption.value} value={singleOption.value}>
-            {singleOption.value}
+        {options.map(({ value }) => (
+          <MenuItem key={value} value={value}>
+            {value}
           </MenuItem>
         ))}
       </Select>
