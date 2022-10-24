@@ -1,11 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import dynamic from 'next/dynamic'
-
-const LoginOrganism = dynamic(
-  () => import('../../components/organisms/Login'),
-  { ssr: false }
-)
+// import dynamic from 'next/dynamic'
+import { LoginOrganism } from '@components/organisms/Login'
+// const LoginOrganism = dynamic(
+//   () => import('../../components/organisms/Login'),
+//   { ssr: false }
+// )
 
 const Login = () => {
   return (
@@ -19,19 +18,6 @@ const Login = () => {
       <section>
         <LoginOrganism />
       </section>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
