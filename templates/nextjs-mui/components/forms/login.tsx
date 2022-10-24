@@ -13,7 +13,9 @@ export const LoginForm = () => {
       password: '',
     },
   })
-
+  const {
+    formState: { errors },
+  } = methods
   const handleSubmit = (data: any) => {
     console.log('handleSubmit data', data)
     // call service
@@ -27,21 +29,20 @@ export const LoginForm = () => {
       alignItems="center"
       maxWidth={450}
       spacing={3}
-      sx={{ border: '1px solid red', paddingBlock: '2rem' }}
+      sx={{ border: '1px solid red', paddingBlock: '2rem', margin: '4rem' }}
     >
-      <Typography>Logo</Typography>
+      <Typography>Aca va el Logo</Typography>
       <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-        Para acceder ingrese su Email/Usuario y Contraseña.
+        Para acceder ingrese su Email / Usuario y Contraseña.
       </Typography>
 
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <Stack spacing={4}>
-            <Stack width={410} spacing={1}>
+          <Stack spacing={2}>
+            <Stack width={410}>
               <Stack>
                 <Stack alignItems="center" direction={'row'}>
                   <Typography width={120}>Email/Usuario</Typography>
-
                   <Input
                     label=""
                     name="username"
@@ -49,25 +50,23 @@ export const LoginForm = () => {
                     variant="outlined"
                     required
                     id="username"
-                    placeHolder="Email"
+                    placeHolder="Email / Usuario"
                   />
                 </Stack>
                 <Stack direction={'row'}>
                   <Divider sx={{ width: '120px', border: '0' }} />
-                  {methods.formState.errors.username ? (
-                    <Typography sx={{ color: 'red', marginLeft: '0.5rem' }}>
-                      Ingrese un Email/Usuario válido
+                  {errors.username ? (
+                    <Typography sx={{ color: '#ff0000', marginLeft: '0.5rem' }}>
+                      Ingrese un Email / Usuario válido
                     </Typography>
                   ) : (
                     <Divider sx={{ marginY: '12px', border: '0' }} />
                   )}
                 </Stack>
               </Stack>
-
               <Stack>
                 <Stack alignItems="center" direction={'row'}>
                   <Typography width={120}>Contraseña</Typography>
-
                   <Input
                     label=""
                     type="password"
@@ -80,8 +79,8 @@ export const LoginForm = () => {
                 </Stack>
                 <Stack direction={'row'}>
                   <Divider sx={{ width: '120px', border: '0' }} />
-                  {methods.formState.errors.password ? (
-                    <Typography sx={{ color: 'red', marginLeft: '0.5rem' }}>
+                  {errors.password ? (
+                    <Typography sx={{ color: '#ff0000', marginLeft: '0.5rem' }}>
                       Ingrese una contraseña válida
                     </Typography>
                   ) : (
