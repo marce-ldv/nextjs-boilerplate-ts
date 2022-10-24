@@ -1,10 +1,5 @@
 import Head from 'next/head'
-// import dynamic from 'next/dynamic'
 import { LoginOrganism } from '@components/organisms/Login'
-// const LoginOrganism = dynamic(
-//   () => import('../../components/organisms/Login'),
-//   { ssr: false }
-// )
 
 const Login = () => {
   return (
