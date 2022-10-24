@@ -6,6 +6,8 @@ import { useFormContext, useController } from 'react-hook-form'
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   name: string
+  id: string
+  placeHolder: string
   variant?: 'standard' | 'filled' | 'outlined'
   rules?: {
     required: boolean
@@ -17,6 +19,8 @@ export const Input = ({
   variant = 'standard',
   name,
   type,
+  id,
+  placeHolder = '',
   rules = { required: true },
 }: InputProps) => {
   const { control } = useFormContext()
@@ -42,10 +46,11 @@ export const Input = ({
         value={value} // input value
         name={name} // send down the input name
         inputRef={ref}
-        id="outlined-basic"
+        id={id}
         label={label}
         variant={variant}
         type={type}
+        placeholder={placeHolder}
       />
     </Box>
   )
