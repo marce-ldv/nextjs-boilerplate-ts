@@ -1,11 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
-
-const LoginOrganism = dynamic(
-  () => import('../../components/organisms/Login'),
-  { ssr: false }
-)
+import { LoginOrganism } from '@organisms/Login'
 
 const Login = () => {
   return (

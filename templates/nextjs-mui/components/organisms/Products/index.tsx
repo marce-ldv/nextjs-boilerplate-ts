@@ -1,11 +1,10 @@
-import { LoginForm } from '@components/forms/login'
 import { styles } from '@organisms/Login/styles'
 
-export const LoginOrganism = () => {
+export const ProductsOrganism = () => {
   return (
     <section className={styles.container}>
-      <LoginForm />
+      <div>header</div>
+      <div>listado de productos</div>
     </section>
   )
 }
-

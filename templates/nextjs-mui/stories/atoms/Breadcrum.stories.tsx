@@ -1,18 +1,35 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Avatar } from '../../components/atoms/Avatar'
+import { Breadcrumb } from '../../components/atoms/Breadcrumb'
+import Link from '@mui/material/Link'
+import Typography from '@mui/material/Typography'
 
 export default {
-  title: 'Atoms/Avatar',
-  component: Avatar,
-  argTypes: {},
-} as ComponentMeta<typeof Avatar>
+  title: 'Atoms/Breadcrumb',
+  component: Breadcrumb,
+  argTypes: {
+    onClick: { action: 'clicked' },
+  },
+} as ComponentMeta<typeof Breadcrumb>
 
-const Template: ComponentStory<typeof Avatar> = args => <Avatar {...args} />
+const Template: ComponentStory<typeof Breadcrumb> = args => (
+  <Breadcrumb {...args} />
+)
+
+const breadcrumbs = [
+  <Link underline="always" key="1" color="inherit" href="/">
+    Inicio
+  </Link>,
+  <Link underline="hover" key="2" color="inherit" href="/test">
+    Productos
+  </Link>,
+  <Typography key="3" color="text.primary">
+    Listado de productos
+  </Typography>,
+]
 
 export const Default = Template.bind({})
 Default.args = {
-  src: '/static/images/avatar/1.jpg',
-  alt: 'Remy Sharp',
+  options: breadcrumbs,
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ResponsiveAppBar } from '../../components/molecules/Navbar'
+import { Header } from '../../components/molecules/Header'
 
 export default {
-  title: 'Molecules/Navbar',
-  component: ResponsiveAppBar,
-} as ComponentMeta<typeof ResponsiveAppBar>
+  title: 'Molecules/Header',
+  component: Header,
+} as ComponentMeta<typeof Header>
 
-const Template: ComponentStory<typeof ResponsiveAppBar> = () => (
-  <ResponsiveAppBar />
+const Template: ComponentStory<typeof Header> = () => (
+  <Header />
 )
 
 export const Default = Template.bind({})
