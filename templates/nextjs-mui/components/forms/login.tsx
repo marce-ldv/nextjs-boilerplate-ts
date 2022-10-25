@@ -5,22 +5,29 @@ import { LoginTypes } from '../../types/login'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { Divider } from '@mui/material'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
 
 export const LoginForm = () => {
-  const methods = useForm<LoginTypes>({
-    defaultValues: {
-      username: '',
-      password: '',
-    },
+  // eslint-disable-next-line no-useless-escape
+  const EmailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+  const schema = z.object({
+    email: z.string().regex(EmailRegex),
+    password: z.string().min(4),
   })
+
+  const methods = useForm<LoginTypes>({
+    resolver: zodResolver(schema),
+  })
+
   const {
     formState: { errors },
   } = methods
   const handleSubmit = (data: any) => {
+    methods.setError
     console.log('handleSubmit data', data)
     // call service
   }
-
   const onSubmit = (data: any) => handleSubmit(data)
   // TODO: remove first stack border
   return (
@@ -33,7 +40,7 @@ export const LoginForm = () => {
     >
       <Typography>Aca va el Logo</Typography>
       <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-        Para acceder ingrese su Email / Usuario y Contraseña.
+        Para acceder ingrese su Email y Contraseña.
       </Typography>
 
       <FormProvider {...methods}>
@@ -42,22 +49,22 @@ export const LoginForm = () => {
             <Stack width={410}>
               <Stack>
                 <Stack alignItems="center" direction={'row'}>
-                  <Typography width={120}>Email/Usuario</Typography>
+                  <Typography width={120}>Email</Typography>
                   <Input
                     label=""
-                    name="username"
+                    name="email"
                     type="text"
                     variant="outlined"
                     required
-                    id="username"
-                    placeHolder="Email / Usuario"
+                    id="email"
+                    placeHolder="Email"
                   />
                 </Stack>
                 <Stack direction={'row'}>
                   <Divider sx={{ width: '120px', border: '0' }} />
-                  {errors.username ? (
+                  {errors.email ? (
                     <Typography sx={{ color: '#ff0000', marginLeft: '0.5rem' }}>
-                      Ingrese un Email / Usuario válido
+                      Ingrese un Email válido
                     </Typography>
                   ) : (
                     <Divider sx={{ marginY: '12px', border: '0' }} />
